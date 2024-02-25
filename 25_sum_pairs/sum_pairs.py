@@ -21,3 +21,22 @@ def sum_pairs(nums, goal):
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+
+ # Create an empty dictionary to store seen numbers and their indices
+    seen = {}
+    
+    # Iterate through the list of numbers
+    for num in nums:
+        # Calculate the complement needed to reach the goal
+        complement = goal - num
+        
+        # Check if the complement exists in the seen dictionary
+        if complement in seen:
+            # If the complement exists, return a tuple of the current number and its complement
+            return (seen[complement], num)
+        
+        # If the complement doesn't exist, store the current number in the seen dictionary
+        seen[num] = num
+    
+    # If no pairs are found that sum to the goal, return an empty tuple
+    return ()
