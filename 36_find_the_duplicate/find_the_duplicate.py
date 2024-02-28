@@ -13,3 +13,18 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+
+# Create an empty set to store seen numbers
+    seen = set()
+    
+    # Iterate through the list of numbers
+    for num in nums:
+        # Check if the number is already seen
+        if num in seen:
+            # If it's seen, it's the duplicate, so return it
+            return num
+        # Add the number to the set of seen numbers
+        seen.add(num)
+    
+    # If no duplicate is found, return None
+    return None

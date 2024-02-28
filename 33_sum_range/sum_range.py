@@ -23,3 +23,23 @@ def sum_range(nums, start=0, end=None):
         >>> sum_range(nums, 1, 99)
         9
     """
+
+# If end is not provided, set it to the length of the list minus 1
+    if end is None:
+        end = len(nums) - 1
+
+    # If end is greater than or equal to the length of the list, set it to the last index of the list
+    end = min(end, len(nums) - 1)
+
+    # Initialize the sum to 0
+    total = 0
+
+    # Iterate over the range from start to end (inclusive)
+    for i in range(start, end + 1):
+        # Add each number to the total sum
+        total += nums[i]
+
+    # Return the total sum
+    return total
+
+
